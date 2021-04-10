@@ -1,0 +1,72 @@
+version: "3"
+
+services: 
+
+  sql-server:
+    image: marcosbonfante/sgm-sql-server:latest
+    container_name: sql-server-sgm
+    environment:
+      SA_PASSWORD: "MeuDB@123"
+      ACCEPT_EULA: "Y"  
+
+  web-mvc:
+    image: "marcosbonfante/tcc-web-mvc:latest"
+    container_name: "marcosbonfante-tcc-web-mvc"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://*:5001
+    volumes: 
+      - dpkeys:/var/data_protection_keys/      
+    depends_on:
+      - api-identity
+      - api-cidadao
+      - api-solicitacao
+      - api-ordem-servico
+
+  api-identity:
+    image: "marcosbonfante/tcc-api-identity:latest"
+    container_name: "marcosbonfante-tcc-api-identity"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=https://+:5101;http://+5102
+    volumes:
+      - ./certs:/https:ro
+
+  api-cidadao:
+    image: "marcosbonfante/tcc-api-cidadao:latest"
+    container_name: "marcosbonfante-tcc-api-cidadao"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=https://+:5201;http://+5202
+    volumes:
+      - ./certs:/https:ro
+
+  api-solicitacao:
+    image: "marcosbonfante/tcc-api-solicitacao:latest"
+    container_name: "marcosbonfante-tcc-api-solicitacao"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=https://+:5301;http://+5302
+    volumes:
+      - ./certs:/https:ro
+
+  api-ordem-servico:
+    image: "marcosbonfante/tcc-api-ordem-servico:latest"
+    container_name: "marcosbonfante-tcc-api-ordem-servico"
+    environment: 
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=https://+:5401;http://+5402
+    volumes:
+      - ./certs:/https:ro
+
+  sgm-server:
+    image: marcosbonfante/sgm-server:latest
+    container_name: sgm-server
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - web-mvc
+
+volumes:
+    dpkeys:      

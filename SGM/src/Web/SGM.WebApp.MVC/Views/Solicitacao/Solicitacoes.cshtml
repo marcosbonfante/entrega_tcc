@@ -1,0 +1,56 @@
+﻿@using SGM.WebApp.MVC.Extensions
+@model IEnumerable<SGM.WebApp.MVC.Models.SolicitacaoViewModel>
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Solicitacao/NovaSolicitacao" class="list-group-item list-group-item-action bg-light border">Novo</a>
+            <a href="~/Solicitacao/Solicitacoes" class="list-group-item list-group-item-action bg-info text-white border">Solicitações</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Minhas Solicitações</h1>
+            <p><b>Explicação do serviço :</b> Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+
+            <div class="table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr class="table-warning">
+                            <th scope="col">Data Solicitação</th>
+                            <th class="w-50" scope="col">Descrição</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sol in Model)
+                        {
+                            <tr>
+                                <td>@sol.DataCadastro</td>
+                                <td>@sol.Descricao</td>
+                                <td>@sol.Status</td>
+                                <td><a asp-controller="Solicitacao" asp-action="Detail" asp-route-id="@sol.Id" class="text-info"><i class="far fa-eye" title="Detalhes"></i></a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

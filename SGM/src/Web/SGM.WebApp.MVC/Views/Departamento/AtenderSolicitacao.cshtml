@@ -1,0 +1,69 @@
+﻿@using SGM.WebApp.MVC.Extensions
+@model IEnumerable<SGM.WebApp.MVC.Models.SolicitacaoViewModel>
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Departamento/AtenderSolicitacao" class="list-group-item list-group-item-action bg-info text-white border">Pedentes</a>
+            <a href="~/Departamento/Atendimento" class="list-group-item list-group-item-action bg-light border">Em Atendimento</a>
+            <a href="~/Departamento/Encerrada" class="list-group-item list-group-item-action bg-light border">Encerradas</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Solicitações Pendentes</h1>
+            <p>Solicitações enviados pelo cidadão e que ainda não foram atendidas.</p>
+
+            <div class="table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr class="table-warning">
+                            <th scope="col">Data Solicitação</th>
+                            <th class="w-50" scope="col">Descrição</th>
+                            <th scope="col">Status</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sol in Model)
+                        {
+                            <tr>
+                                <td>@sol.DataCadastro</td>
+                                <td>@sol.Descricao</td>
+                                <td>@sol.Status</td>
+                                <td>
+                                    <form method="get" asp-controller="Departamento" asp-action="ResponderSolicitacao">
+                                        <input type="hidden" id="SolicitacaoId" name="SolicitacaoId" value="@sol.Id" />
+                                        <button type="submit" class="btn btn-secondary">Responder</button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form method="get" asp-controller="Departamento" asp-action="GerarOrdemServico">
+                                        <input type="hidden" id="SolicitacaoId" name="SolicitacaoId" value="@sol.Id" />
+                                        <button type="submit" class="btn btn-primary">Delegar</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

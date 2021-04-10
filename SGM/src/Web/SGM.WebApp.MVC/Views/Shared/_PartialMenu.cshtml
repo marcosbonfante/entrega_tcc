@@ -1,0 +1,63 @@
+﻿@using SGM.WebAPI.Core.Usuario
+@inject IAspNetUser AppUser
+
+@{
+    var controllerName = this.ViewContext.RouteData.Values["controller"].ToString();
+
+}
+
+@if (AppUser.EstaAutenticado())
+{
+    <nav class="navbar navbar-expand-lg navbar-menu">
+
+        <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-primary" href="~/"><i class="fas fa-home"></i></a>
+                </li>
+
+                @if (@AppUser.PossuiRole("CIDADAO"))
+                {
+                    <li class="nav-item">
+                        @if (controllerName == "Solicitacao")
+                        {
+                            <a class="nav-link text-danger" href="~/Solicitacao/NovaSolicitacao">Solicitar Serviço</a>
+                        }
+                        else
+                        {
+                            <a class="nav-link" href="~/Solicitacao/NovaSolicitacao">Solicitar Serviço</a>
+                        }
+                    </li>
+                }
+                @if (@AppUser.PossuiRole("SERVIDOR"))
+                {
+            <li class="nav-item">
+                @if (controllerName == "Departamento")
+                {
+                    <a class="nav-link text-danger" href="~/Departamento/AtenderSolicitacao">Atendimento</a>
+                }
+                else
+                {
+                    <a class="nav-link" href="~/Departamento/AtenderSolicitacao">Atendimento</a>
+                }
+            </li>
+            <li class="nav-item">
+                @if (controllerName == "Ordems")
+                {
+                    <a class="nav-link text-danger" href="~/Ordems/Atendimento">Ordens de Serviço</a>
+                }
+                else
+                {
+                    <a class="nav-link" href="~/Ordems/Atendimento">Ordens de Serviço</a>
+                }
+            </li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+}

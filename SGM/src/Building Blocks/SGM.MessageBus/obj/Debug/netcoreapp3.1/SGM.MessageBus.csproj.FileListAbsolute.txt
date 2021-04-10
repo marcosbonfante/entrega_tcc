@@ -1,0 +1,12 @@
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\bin\Debug\netcoreapp3.1\SGM.MessageBus.deps.json
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\bin\Debug\netcoreapp3.1\SGM.MessageBus.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\bin\Debug\netcoreapp3.1\SGM.MessageBus.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\bin\Debug\netcoreapp3.1\SGM.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\bin\Debug\netcoreapp3.1\SGM.Core.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.csprojAssemblyReference.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.AssemblyInfoInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.AssemblyInfo.cs
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.csproj.CoreCompileInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.csproj.CopyComplete
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.MessageBus\obj\Debug\netcoreapp3.1\SGM.MessageBus.pdb

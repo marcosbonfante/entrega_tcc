@@ -1,0 +1,17 @@
+﻿@model SGM.WebApp.MVC.Models.ErrorViewModel
+
+
+@if (Model == null)
+{
+    <div class="d-flex justify-content-center p-5">
+        <h2 class="text-danger font-weight-bold">Ocorreu um erro, mas não se preocupe. Nosso time será avisado e iremos corrigir em breve!</h2>
+    </div>
+}
+else
+{
+
+    <div>
+        <h2>@Html.Raw(Model.Mensagem)</h2>
+    </div>
+
+}

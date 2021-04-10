@@ -1,0 +1,70 @@
+﻿@{
+    var solicitacao = (SGM.WebApp.MVC.Models.SolicitacaoViewModel)ViewData["solicitacao"];
+    var ordems = (IEnumerable<SGM.WebApp.MVC.Models.OrdemViewModel>)ViewData["ordem"];
+}
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Solicitacao/Solicitacoes" class="list-group-item list-group-item-action bg-light border">Voltar</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Detalhes da Solcitação</h1>
+            @if (solicitacao != null)
+            {
+                <p>
+                    Data da Solicitação: @solicitacao.DataCadastro<br />
+                    Descrição : <span class="font-weight-bold font-italic">
+                        @solicitacao.Descricao
+                    </span><br />
+                    Data Registro : @solicitacao.DataCadastro<br />
+                    Status : <span class="font-weight-bold text-danger"> @solicitacao.Status</span><br />
+                </p>
+            }
+            @if (ordems != null)
+            {
+                <p>Ordens de serviço associadas.</p>
+
+                <div class="table-responsive">
+
+                    <table class="table">
+                        <thead>
+                            <tr class="table-warning">
+                                <th scope="col">Data da Ordem</th>
+                                <th scope="col">Responsavél</th>
+                                <th scope="col">Solução</th>
+                                <th scope="col">Data Encerramento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var sol in ordems)
+                            {
+                                <tr>
+                                    <td>@sol.DataCadastro</td>
+                                    <td>@sol.CodDepartamento</td>
+                                    <td>@sol.Solucao</td>
+                                    <td>@sol.DataSolucao</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            }
+
+        </div>
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

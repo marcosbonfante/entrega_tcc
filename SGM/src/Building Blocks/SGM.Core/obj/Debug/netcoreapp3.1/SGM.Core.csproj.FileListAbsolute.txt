@@ -1,0 +1,9 @@
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\bin\Debug\netcoreapp3.1\SGM.Core.deps.json
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\bin\Debug\netcoreapp3.1\SGM.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\bin\Debug\netcoreapp3.1\SGM.Core.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.AssemblyInfoInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.AssemblyInfo.cs
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.csproj.CoreCompileInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.Core\obj\Debug\netcoreapp3.1\SGM.Core.csprojAssemblyReference.cache

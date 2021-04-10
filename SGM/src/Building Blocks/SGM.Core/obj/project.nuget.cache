@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "vhRdob/TZVuaAzS/qSDbXAlpSS5MvBLPpVKOiKmTDBvidaeUc4YSrXsYcSUFu1rBSt4NlunRV6F99KBuopDhWw==",
+  "success": true,
+  "projectFilePath": "D:\\estudos\\GitHub\\TCC\\SGM\\src\\Building Blocks\\SGM.Core\\SGM.Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marco\\.nuget\\packages\\fluentvalidation\\9.5.1\\fluentvalidation.9.5.1.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\mediatr\\8.0.1\\mediatr.8.0.1.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.12\\microsoft.extensions.configuration.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.12\\microsoft.extensions.dependencyinjection.abstractions.3.1.12.nupkg.sha512",
+    "C:\\Users\\marco\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.12\\microsoft.extensions.primitives.3.1.12.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,49 @@
+﻿@using SGM.WebApp.MVC.Extensions
+@model SGM.WebApp.MVC.Models.OrdemViewModel
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Ordems/Atendimento" class="list-group-item list-group-item-action bg-light border">Em Atendimento</a>
+            <a href="~/Ordems/Encerrada" class="list-group-item list-group-item-action bg-light border">Encerradas</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+
+            <h1 class="mt-4">Solução da Ordem de Serviço</h1>
+            @if (Model != null)
+            {
+                <p>Data da Solicitação: @Model.DataCadastro</p>
+                <p>Responsável : @Model.CodDepartamento</p>
+                <p>Descrição : @Model.Descricao</p>
+                <form method="post" asp-controller="Ordems" asp-action="ResponderOrdem">
+                    <input type="hidden" asp-for="Id" />
+                    <input type="hidden" asp-for="IdSolicitante" />
+                    <input type="hidden" asp-for="IdSolicitacao" />
+                    <input type="hidden" asp-for="Descricao" />
+                    <input type="hidden" asp-for="CodDepartamento" />
+                    <input type="hidden" asp-for="DataCadastro" />
+                    <div class="form-group">
+                        <label asp-for="Solucao">Solução</label>
+                        <textarea class="form-control" asp-for="Solucao" rows="4" cols="80"></textarea>
+                        <span asp-validation-for="Solucao" class="text-danger"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            }
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,60 @@
+﻿@using SGM.WebApp.MVC.Extensions
+@model SGM.WebApp.MVC.Models.OrdemViewModel
+@{
+    var depto = (IEnumerable<SGM.Core.DomainObjects.Departamento>)ViewData["Departamentos"];
+    var solicitacao = (SGM.WebApp.MVC.Models.SolicitacaoViewModel)ViewData["Solicitacao"];
+}
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Departamento/AtenderSolicitacao" class="list-group-item list-group-item-action bg-info text-white border">Pedentes</a>
+            <a href="~/Departamento/Atendimento" class="list-group-item list-group-item-action bg-light border">Em Atendimento</a>
+            <a href="~/Departamento/Encerrada" class="list-group-item list-group-item-action bg-light border">Encerradas</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+
+            <h1 class="mt-4">Gerar Ordem de Serviço</h1>
+            <p>Gerar Ordem de Serviço e encaminhar para o departamento responsável pela solução.</p>
+            <p>Data da Solicitação: @solicitacao.DataCadastro</p>
+            <p>Descrição : @solicitacao.Descricao</p>
+
+            <form method="post" asp-controller="Departamento" asp-action="GerarOrdemServico">
+                <input type="hidden" asp-for="IdSolicitacao" />
+                <div class="form-group">
+                    <label asp-for="CodDepartamento"></label>
+                    <select class="form-control" asp-for="CodDepartamento">
+                        <option value="">[Selecione um departamento]</option>
+                        @foreach (var item in depto)
+                        {
+                            <option value="@item.CodDepartamento">@item.Descr</option>
+                        }
+                    </select>
+                    <span asp-validation-for="CodDepartamento" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Descricao">Descrição</label>
+                    <textarea class="form-control" asp-for="Descricao" rows="4" cols="80"></textarea>
+                    <span asp-validation-for="Descricao" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

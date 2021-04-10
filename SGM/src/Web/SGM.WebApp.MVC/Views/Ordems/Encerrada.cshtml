@@ -1,0 +1,60 @@
+﻿@using SGM.WebApp.MVC.Extensions
+@model IEnumerable<SGM.WebApp.MVC.Models.OrdemViewModel>
+
+<div class="d-flex w-100">
+
+    <div class="border-0" style="width: 20%">
+        <div class="list-group list-group-flush">
+            <a href="~/Ordems/Atendimento" class="list-group-item list-group-item-action bg-light border">Em Atendimento</a>
+            <a href="~/Ordems/Encerrada" class="list-group-item list-group-item-action bg-info text-white border">Encerradas</a>
+        </div>
+    </div>
+
+    <div id="page-content-wrapper" style="width: 80%">
+
+        <vc:Summary></vc:Summary>
+
+        <div class="container-fluid">
+            <h1 class="mt-4">Ordens de Serviços - Atendimento</h1>
+            <p>Solicitações enviados pelo cidadão e que já foram atendidas.</p>
+
+            <div class="table-responsive">
+
+                <table class="table">
+                    <thead>
+                        <tr class="table-warning">
+                            <th scope="col">Data Solicitação</th>
+                            <th scope="col">Departamento</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Solução</th>
+                            <th scope="col">Data Solução</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var sol in Model)
+                        {
+                        <tr>
+                            <td>@sol.DataCadastro</td>
+                            <td>@sol.CodDepartamento</td>
+                            <td>@sol.Descricao</td>
+                            <td>@sol.Solucao</td>
+                            <td>@sol.DataSolucao</td>
+                            <td><a asp-controller="Ordems" asp-action="Detail" asp-route-id="@sol.Id" class="text-info"><i class="far fa-eye" title="Detalhes"></i></a></td>
+                        </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

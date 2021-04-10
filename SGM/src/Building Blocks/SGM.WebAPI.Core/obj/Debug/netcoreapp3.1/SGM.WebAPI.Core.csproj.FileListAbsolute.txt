@@ -1,0 +1,12 @@
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\bin\Debug\netcoreapp3.1\SGM.WebAPI.Core.deps.json
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\bin\Debug\netcoreapp3.1\SGM.WebAPI.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\bin\Debug\netcoreapp3.1\SGM.WebAPI.Core.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\bin\Debug\netcoreapp3.1\SGM.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\bin\Debug\netcoreapp3.1\SGM.Core.pdb
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.csprojAssemblyReference.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.AssemblyInfoInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.AssemblyInfo.cs
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.csproj.CoreCompileInputs.cache
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.csproj.CopyComplete
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.dll
+D:\estudos\TCC\SGM\src\Building Blocks\SGM.WebAPI.Core\obj\Debug\netcoreapp3.1\SGM.WebAPI.Core.pdb
